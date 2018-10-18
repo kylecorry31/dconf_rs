@@ -1,6 +1,6 @@
 # Changelog - dconf_rs
 
-## v1.0.0 - October 18, 2018
+## v0.1.0 - October 18, 2018
 
 Initial release.
 
