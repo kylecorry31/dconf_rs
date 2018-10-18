@@ -1,4 +1,7 @@
 # dconf_rs
+
+[![Build Status](https://travis-ci.org/kylecorry31/dconf_rs.svg?branch=master)](https://travis-ci.org/kylecorry31/dconf_rs)
+
 A Rust API for interacting with dconf.
 
 Version 0.1.0 - [Changelog](CHANGELOG.md)
