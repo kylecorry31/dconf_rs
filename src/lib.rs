@@ -1,70 +1,69 @@
 use std::process::{Command, Output};
-use std::io::Result;
 
 /// Sets a boolean value through dconf
-pub fn set_boolean(key: &str, value: bool) -> Result<()> {
+pub fn set_boolean(key: &str, value: bool) -> Option<()> {
 	set(key, &format!("{}", value))
 }
 
 /// Gets a boolean value through dconf
-pub fn get_boolean(key: &str) -> Result<bool> {
-	Ok(get(key)? == "true")
+pub fn get_boolean(key: &str) -> Option<bool> {
+	Some(get(key)? == "true")
 }
 
 /// Sets a string value through dconf
-pub fn set_string(key: &str, value: &str) -> Result<()> {
+pub fn set_string(key: &str, value: &str) -> Option<()> {
     set(key, &format!("'{}'", value))
 }
 
 /// Gets a string value through dconf
-pub fn get_string(key: &str) -> Result<String> {
+pub fn get_string(key: &str) -> Option<String> {
     get(key)
 }
 
 /// Sets an int value through dconf
-pub fn set_int(key: &str, value: i32) -> Result<()> {
+pub fn set_int(key: &str, value: i32) -> Option<()> {
     set(key, &format!("{}", value))
 }
 
 /// Gets an int value through dconf
-pub fn get_int(key: &str) -> Result<i32> {
-    Ok(get(key)?.parse::<i32>().unwrap())
+pub fn get_int(key: &str) -> Option<i32> {
+    Some(get(key)?.parse::<i32>().unwrap())
 }
 
 /// Sets a uint value through dconf
-pub fn set_uint(key: &str, value: u32) -> Result<()> {
+pub fn set_uint(key: &str, value: u32) -> Option<()> {
     set(key, &format!("{}", value))
 }
 
 /// Gets a uint value through dconf
-pub fn get_uint(key: &str) -> Result<u32> {
-    Ok(get(key)?.parse::<u32>().unwrap())
+pub fn get_uint(key: &str) -> Option<u32> {
+    Some(get(key)?.parse::<u32>().unwrap())
 }
 
 /// Sets a double value through dconf
-pub fn set_double(key: &str, value: f64) -> Result<()> {
+pub fn set_double(key: &str, value: f64) -> Option<()> {
     set(key, &format!("{}", value))
 }
 
 /// Gets a double value through dconf
-pub fn get_double(key: &str) -> Result<f64> {
-    Ok(get(key)?.parse::<f64>().unwrap())
+pub fn get_double(key: &str) -> Option<f64> {
+    Some(get(key)?.parse::<f64>().unwrap())
 }
 
 
 // Helpers
-fn get(key: &str) -> Result<String> {
+fn get(key: &str) -> Option<String> {
     let mut cmd = Command::new("dconf");
 	cmd.args(&["read", key]);
-	Ok(get_stdout(cmd.output()?))
+	Some(get_stdout(cmd.output().unwrap()))
 }
 
-fn set(key: &str, value: &str) -> Result<()>{
+fn set(key: &str, value: &str) -> Option<()>{
     let mut cmd = Command::new("dconf");
 	cmd.args(&["write", key, value]);
 	match cmd.output() {
-		Ok(_) => Ok(()),
-		Err(e) => Err(e),
+		Ok(_) => Some(()),
+		Err(e) => None,
 	}
 }
 
