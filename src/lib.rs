@@ -63,7 +63,7 @@ fn set(key: &str, value: &str) -> Option<()>{
 	cmd.args(&["write", key, value]);
 	match cmd.output() {
 		Ok(_) => Some(()),
-		Err(e) => None,
+		Err(_) => None,
 	}
 }
 
