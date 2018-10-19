@@ -1,5 +1,10 @@
 # Changelog - dconf_rs
 
+## v0.2.1 - October 19, 2018
+
+**Bug Fixes:**
+- Removed unused variable
+
 ## v0.2.0 - October 19, 2018
 
 **Changed:**

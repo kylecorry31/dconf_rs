@@ -1,7 +1,7 @@
 [package]
 name = "dconf_rs"
 license = "MIT"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Kyle Corry <kylecorry31@gmail.com>"]
 description = "A Rust API for interacting with dconf."
 readme = "README.md"

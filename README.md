@@ -4,7 +4,7 @@
 
 A Rust API for interacting with dconf.
 
-Version 0.2.0 - [Changelog](CHANGELOG.md)
+Version 0.2.1 - [Changelog](CHANGELOG.md)
 
 ## Getting started
 ### Dependencies
@@ -21,7 +21,7 @@ cargo build --release
 First add the following to your `Cargo.toml`:
 ```toml
 [dependencies]
-dconf_rs = "0.2.0"
+dconf_rs = "0.2.1"
 ```
 
 Next, add this to your crate root:
