@@ -1,5 +1,11 @@
 # Changelog - dconf_rs
 
+## v0.3.0 - October 20, 2018
+
+**Changed:**
+- All commands return Result instead of Option
+  - Error messages are now easy to understand
+
 ## v0.2.1 - October 19, 2018
 
 **Bug Fixes:**

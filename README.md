@@ -4,7 +4,7 @@
 
 A Rust API for interacting with dconf.
 
-Version 0.2.1 - [Changelog](CHANGELOG.md)
+Version 0.3.0 - [Changelog](CHANGELOG.md)
 
 ## Getting started
 ### Dependencies
